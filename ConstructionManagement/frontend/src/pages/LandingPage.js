@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import {
   HardHat, BarChart3, CheckSquare, DollarSign, Users, FileText,
-  Bell, Zap, Shield, ArrowRight, Star, ChevronRight,
-  Building2, TrendingUp, Clock, Globe
+  Bell, Zap, Shield, ArrowRight, ChevronRight,
+  Building2, Globe
 } from 'lucide-react';
 
 const features = [

@@ -79,7 +79,7 @@ export default function DocumentsTab({ projectId }) {
                   <td>{d.uploadedAt ? format(new Date(d.uploadedAt), 'MMM d, yyyy') : '—'}</td>
                   <td>
                     <div className="flex gap-2">
-                      <a href={`http://localhost:8080${d.fileUrl}`} target="_blank" rel="noreferrer" className="btn btn-secondary btn-sm">
+                      <a href={`https://buildtrack-fsd-project-production.up.railway.app${d.fileUrl}`} target="_blank" rel="noreferrer" className="btn btn-secondary btn-sm">
                         <Download size={12} />
                       </a>
                       <button className="btn btn-danger btn-sm" onClick={() => handleDelete(d.id)}><Trash2 size={12} /></button>

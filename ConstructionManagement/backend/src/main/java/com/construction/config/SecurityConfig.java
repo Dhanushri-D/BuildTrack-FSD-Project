@@ -31,11 +31,11 @@ public class SecurityConfig {
         http.csrf(c -> c.disable())
             .cors(c -> c.configurationSource(corsSource()))
             .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .authorizeHttpRequests(a -> a
-                .requestMatchers("/api/auth/**").permitAll()
-                .requestMatchers("/api/files/**").permitAll()
-                .anyRequest().authenticated()
-            )
+            ..authorizeHttpRequests(a -> a
+    .requestMatchers("/auth/**").permitAll()
+    .requestMatchers("/files/**").permitAll()
+    .anyRequest().authenticated()
+)
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
@@ -43,7 +43,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:3000","https://build-track-fsd-project-8c41cdqdc-dhanushri-ds-projects.vercel.app"));
+        config.setAllowedOriginPatterns(List.of("https://*.vercel.app"));"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
